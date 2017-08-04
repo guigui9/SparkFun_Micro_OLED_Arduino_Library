@@ -388,9 +388,9 @@ void MicroOLED::clear(uint8_t mode, uint8_t c) {
 */
 void MicroOLED::invert(boolean inv) {
 	if (inv)
-	command(INVERTDISPLAY);
+		command(INVERTDISPLAY);
 	else
-	command(NORMALDISPLAY);
+		command(NORMALDISPLAY);
 }
 
 /** \brief Set contrast.
@@ -429,12 +429,12 @@ size_t MicroOLED::write(uint8_t c) {
 	} else if (c == '\r') {
 		// skip
 	} else {
-		drawChar(cursorX, cursorY, c, foreColor, drawMode);
-		cursorX += fontWidth+1;
 		if ((cursorX > (LCDWIDTH - fontWidth))) {
 			cursorY += fontHeight;
 			cursorX = 0;
 		}
+		drawChar(cursorX, cursorY, c, foreColor, drawMode);
+		cursorX += fontWidth+1;
 	}
 
 	return 1;
