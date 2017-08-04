@@ -34,7 +34,7 @@ https://github.com/emil01/SparkFun_Micro_OLED_Arduino_Library/
 // Standard ASCII 5x7 font  (cp437 : DOS Latin US)
 static const unsigned char font5x7[] PROGMEM = {
 	// first row defines - FONTWIDTH, FONTHEIGHT, ASCII START CHAR, TOTAL CHARACTERS, FONT MAP WIDTH HIGH, FONT MAP WIDTH LOW (2,56 meaning 256)
-	5, 8, 0, 256, 12, 80,  // FONT MAP = FONTWIDTH * TOTAL CHARACTERS = 1280
+	5, 8, 0, 255, 12, 75,  // FONT MAP = FONTWIDTH * TOTAL CHARACTERS = 1275
 	0x00, 0x00, 0x00, 0x00, 0x00,
 	0x3E, 0x5B, 0x4F, 0x5B, 0x3E,
 	0x3E, 0x6B, 0x4F, 0x6B, 0x3E,
@@ -290,6 +290,6 @@ static const unsigned char font5x7[] PROGMEM = {
 	0x00, 0x1F, 0x01, 0x01, 0x1E,
 	0x00, 0x19, 0x1D, 0x17, 0x12,
 	0x00, 0x3C, 0x3C, 0x3C, 0x3C,
-	0x00, 0x00, 0x00, 0x00, 0x00   // #255
+	0x00, 0x00, 0x00, 0x00, 0x00   // #255 (ignore the last)
 };
 #endif // FONT5X7_H
